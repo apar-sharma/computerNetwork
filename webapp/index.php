@@ -42,7 +42,10 @@
                 echo "<p class='error'>File must be at least 10 MB.</p>";
                 $uploadOk = 0;
             }
-
+            if ($fileSize > 524288000) {
+                echo "<p class='error'>File must be less than 500 MB.</p>";
+                $uploadOk = 0;
+            }
             if ($uploadOk == 0) {
                 echo "<p class='error'>Sorry, your file was not uploaded.</p>";
             } else {
